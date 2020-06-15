@@ -57,16 +57,7 @@ public class WhilePractice {
 		 * 1~100사이의 정수중 홀수합(Quiz)    
 		 * 1~100사이의 정수중 짝수합(Quiz)    
 		 */
-		int tot = 0;
-		int m = 1;
-		while(m <= 100) {
-			//tot = tot + m;
-			tot += m;//연산후대입연산자
-			m++;
-		}
-		System.out.println("1~100사이의 정수합:"+tot);
-		System.out.println("1~100사이의 홀수합:");
-		System.out.println("1~100사이의 짝수합:");
+	
 		
 		
 	}
