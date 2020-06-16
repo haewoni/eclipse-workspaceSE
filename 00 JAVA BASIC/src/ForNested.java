@@ -51,8 +51,8 @@ public class ForNested {
 		 */
 		for(int i = 0; i < 5; i++) {
 			for(int j=0; j<5;j++) {
-		System.out.printf("★[i=%d,j=%d]",i,j);
-		}
+				System.out.printf("★[i=%d,j=%d]",i,j);
+			}
 			System.out.println("\n");
 
 		
