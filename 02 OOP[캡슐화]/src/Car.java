@@ -9,13 +9,13 @@ public class Car {
 	 */
 	
 	//차량번호 
-	private String no;
+	String no;
 	//입차시간
-	private int inTime;
+	int inTime;
 	//출차시간
-	private int outTime;
+	int outTime;
 	//주차요금
-	private int fee;
+	int fee;
 	
 	/*<<행위>>
 	 * 멤버 메소드 (변수)
@@ -23,19 +23,19 @@ public class Car {
 	 *
 	 */
 	//입차
-	public void ipCha(String no,int inTIme) {
+	void ipCha(String no,int inTIme) {
 		this.no=no;
 		this.inTime=inTime;
 		
 	}
 	//출차시간set
-	public void setOutTime(int outTime) {
+	void setOutTime(int outTime) {
 		this.outTime=outTime;
 	}
 	
 	
 	//주차요금계산
-	public void calculateFee() {
+	void calculateFee() {
 		this.fee=(this.outTime-this.inTime)*1000;
 		
 		
@@ -43,7 +43,7 @@ public class Car {
 	
 	
 	//영수증 출력
-	public void print() {
+	void print() {
 		System.out.println("-------------------------------------");
 		System.out.printf("%s %s %s %s%n","차량번호","입차시간","출차시간","주차요금");
 		System.out.println("-------------------------------------");

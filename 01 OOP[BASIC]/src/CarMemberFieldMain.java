@@ -1,5 +1,5 @@
 
-public class ParkingZoneMain {
+public class CarMemberFieldMain {
 
 	public static void main(String[] args) {
 		/*

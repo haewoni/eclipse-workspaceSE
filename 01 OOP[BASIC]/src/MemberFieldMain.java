@@ -8,6 +8,8 @@ public class MemberFieldMain {
 		MemberField mf1 = new MemberField();
 		/*
 		 * 객체의 참조 변수를 통한 멤버필드(변수)에 데이터 대입
+		 * 멤버 변수 접근 방법
+		 *   --> 참조변수.식별자(멤버변수의 이름)
 		 */
 		
 		mf1.member1=12;
