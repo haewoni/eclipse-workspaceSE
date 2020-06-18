@@ -11,7 +11,7 @@ public class StudentMemberMethodMain {
 		Student stud3 = new Student();
 		
 		/*
-		 * ???????학점 구하기
+		 * ???????석차 구하기
 		 */
 		
 		/*
