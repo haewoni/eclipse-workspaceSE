@@ -1,4 +1,4 @@
-package com.itwill11.member_method;
+package com.itwill01.member_method;
 
 public class StudentMemberMethodMain {
 
@@ -10,9 +10,7 @@ public class StudentMemberMethodMain {
 		Student stud2 = new Student();
 		Student stud3 = new Student();
 		
-		/*
-		 * ???????석차 구하기
-		 */
+		
 		
 		/*
 		 학생객체데이타(번호, 이름, 국어, 영어, 수학) 입력메쏘드호출(3명)

@@ -1,4 +1,4 @@
-package com.itwill11.member_method;
+package com.itwill01.member_method;
 
 /*
  * 성적처리를위해 필요한 학생객체를 만들기 위한 클래스

@@ -1,4 +1,4 @@
-package com.itwill11.member_method;
+package com.itwill01.member_method;
 
 public class CalculatorMain {
 
