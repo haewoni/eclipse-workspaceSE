@@ -57,7 +57,7 @@ public class Student {
 	}
 
 	public void print() {
-		System.out.println("%s %s %s %s %s %s %s %s %n", );
+		System.out.println("%s %s %s %s %s %s %s %s %n");
 		System.out.printf("%d %s %d %d %d %d %.1f %s %n", 
 				this.no, this.name, this.kor, this.eng, this.math, this.tot, this.avg, this.grade);
 	}

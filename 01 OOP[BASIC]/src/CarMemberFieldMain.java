@@ -9,7 +9,7 @@ public class CarMemberFieldMain {
 		//차 객체 주소 저장할 변수 선언(참조형,객체형,클래스형)
 		Car car1=null; 
 		car1 = new Car();  ///차 객체 생성 후 반환되는 주소 car1변수에 대입
-		car1.no="1234"; //차 객체의 no멤버 변수에 "1234' 대입
+		car1.getNo()="1234"; //차 객체의 no멤버 변수에 "1234' 대입
 		car1.inTime=12; // 차 객체의 inTime 변수에 12 대입
 
 		/*
@@ -33,6 +33,8 @@ public class CarMemberFieldMain {
 		System.out.printf("%s %s %s %s%n","차량번호","입차시간","출차시간","주차요금");
 		System.out.println("-------------------------------------");
 		System.out.printf("%8s %6d %8d %10d%n",car1.no,car1.inTime,car1.outTime,car1.fee);
+		
+	
 	}
 
 }

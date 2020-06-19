@@ -55,15 +55,25 @@ public class StudentConstructorMain {
 		 * 학생 student2 의 학점데이타 반환받은후 출력
 		 */
 		System.out.println("---------------------------------------------------------------------");
+		
+		/*
 		stud1.setName("Alexa");
 		System.out.println(stud1.getName());
+		*/
+		stud1.setName("Alexa");
 		
-		stud1.getTot();
+		char stud2Grade = stud2.getGrade();
+		System.out.println(stud2Grade);
+		
+		
+		
+		/*
+		 
 		System.out.println(stud1.getTot());
 		
 		stud2.getGrade();
 		System.out.println(stud2.getGrade());
-		
+		*/
 
 	}
 
