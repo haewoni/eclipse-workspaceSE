@@ -10,15 +10,14 @@ public class Account {
 
 	public Account() {
 	}
-		public Account(int no,String owner,int balance,double iyul) {
-			this.no=no;
-			this.owner=owner;
-			this.balance=balance;
-	    	this.iyul=iyul;
-				
-			
-		}
 
+	public Account(int no, String owner, int balance, double iyul) {
+		this.no = no;
+		this.owner = owner;
+		this.balance = balance;
+		this.iyul = iyul;
+
+	}
 
 	/*
 	 * 멤버 메소드
@@ -36,12 +35,13 @@ public class Account {
 	public void withdraw(int m) {
 		this.balance = this.balance - m;
 	}
+
 	/*
 	 * 
 	 */
 	public void headerPrint() {
 		System.out.println("--------------------------");
-		System.out.printf("%s %s %s %s %n","번호","이름","잔고","이율");
+		System.out.printf("%s %s %s %s %n", "번호", "이름", "잔고", "이율");
 		System.out.println("--------------------------");
 	}
 
@@ -49,7 +49,7 @@ public class Account {
 	 * 계좌 정보 출력
 	 */
 	public void print() {
-		System.out.printf("%d %s %d %.1f %n",this.no,this.owner,this.balance,this.iyul);
+		System.out.printf("%d %s %d %.1f %n", this.no, this.owner, this.balance, this.iyul);
 
 	}
 

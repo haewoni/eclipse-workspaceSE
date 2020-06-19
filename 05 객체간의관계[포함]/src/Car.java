@@ -20,6 +20,7 @@ public class Car {
 		this.engine = engine;
 	}
 
+	// 프린트 메소드
 	public void print() {
 		System.out.println(this.no + "\t" + this.model+"\t");
 		this.engine.print();
