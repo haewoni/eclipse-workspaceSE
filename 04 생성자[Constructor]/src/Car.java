@@ -17,7 +17,7 @@ public class Car {
 	//주차요금
 	int fee;
 	public Car() {
-		
+		Car.count++;
 	}
 	
 	

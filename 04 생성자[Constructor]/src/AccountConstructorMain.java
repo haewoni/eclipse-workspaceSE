@@ -17,7 +17,7 @@ public class AccountConstructorMain {
 		account5.deposit(1000);
 		account6.deposit(1000);
 		
-		account1.headerPrint();
+		Account.headerPrint();
 		account1.print();
 		account2.print();
 		account3.print();

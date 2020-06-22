@@ -33,7 +33,7 @@ public class Static {
 	public void instance_method() {
 		System.out.println("난 인스턴스(객체)메소드(this 사용 가능:"+this.instance_memeber_field);
 		
-	}
+	} 
 	
 	public static void static_method() {
 		System.out.println("난 정적(공용,클래스)메소드(this 사용 불가능)");

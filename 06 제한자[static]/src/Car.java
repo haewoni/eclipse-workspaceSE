@@ -9,14 +9,14 @@ public class Car {
 	
 	
 	
-	public Car() {
-		
-	}
+	
 
 	public Car(int no, String model, String color) {
 	    this.no = no;
 		this.model = model;
 		this.color = color;
+		Car.count=Car.count+1;
+		//this.count=this.count+1;
 	}
 	
 	public void print() {
