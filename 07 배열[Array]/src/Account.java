@@ -22,7 +22,7 @@ public class Account {
 	/*
 	 * 멤버 메소드
 	 */
-	/*
+	/* 
 	 * 입금
 	 */
 	public void deposit(int m) {
