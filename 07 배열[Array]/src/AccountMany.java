@@ -1,5 +1,5 @@
 
-public class AccountArray {
+public class AccountMany {
 	Account acc0;
 	Account acc1;
 	Account acc2;

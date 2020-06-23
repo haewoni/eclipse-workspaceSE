@@ -1,9 +1,9 @@
 
-public class AccountArrayMain {
+public class AccountManyMain {
 
 	public static void main(String[] args) {
 		//Account[] accountArray= new Account [5];
-		AccountArray accountArray=new AccountArray();
+		AccountMany accountArray=new AccountMany();
 		accountArray.acc0=new Account(1111,"KIM",89000,0.6);
 		accountArray.acc1=new Account(2222,"SIM",45000,0.3);
 		accountArray.acc2=new Account(3333,"FIM",62000,1.6);
