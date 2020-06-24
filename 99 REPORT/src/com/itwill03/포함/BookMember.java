@@ -1,4 +1,4 @@
-package com.itwill03_포함;
+package com.itwill03.포함;
 
 public class BookMember {
 	//회원번호
