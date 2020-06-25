@@ -22,17 +22,15 @@ public class CarArrayMain {
 		System.out.println();
 		
 		
-		System.out.println("2.주차전체구획수:");
+		System.out.println("2.주차전체구획수:"+carArray.length);
 		int count = 0;
-		/*count = carArray.length;
-		System.out.println(count);
+		
 		System.out.println();
-		*/
 		for (int i = 0; i < carArray.length; i++) {
-			if (carArray[i] == null) 
+			if (carArray[i] == null) {
 				count++;
+			}
 		}
-
 		
 		
 		System.out.println("3.주차가능주차구획수:" + count);
