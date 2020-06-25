@@ -9,6 +9,12 @@ public class Account {
 	private String owner;//계좌주
 	private int balance;//잔고
 	private double iyul;//이율
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.no+"\t"+this.owner+"\t"+this.balance+"\t"+this.iyul;
+	}
 	/*
 	 * 행위(operation)
 	 *  - 멤버메쏘드
