@@ -8,7 +8,7 @@ package com.itwill06.service;
  */
  
 public class AccountService {
-	
+
 	private Account[] accounts= {
 			new Account(1111, "KIM", 89000, 1.3),
 			new Account(2222, "AIMDDF", 45000, 2.7),
@@ -25,20 +25,9 @@ public class AccountService {
 	02.계좌객체를 인자로 받아서 Account[]에추가
 	*/
 	public void addAccount(int no, String owner, int balance, double iyul) {
-		Account newAccount = new Account();
+		Account newAccount = new Account(no, owner, balance, iyul);
 		/*
-		 * 배열에 추가
-		 */
-		Account[] tempAccounts=new Account[accounts.length+1];
-		for (int i = 0; i < accounts.length; i++) {
-			tempAccounts[i]=accounts[i];
-		}
-		tempAccounts[tempAccounts.length-1] =newAccount;
-		this.accounts=tempAccounts;
-	}
-	public void addAccount(Account newAccount) {
-		/*
-		 * 배열에 추가
+		 * 배열에추가
 		 */
 		Account[] tempAccounts=new Account[accounts.length+1];
 		for (int i = 0; i < accounts.length; i++) {
@@ -47,10 +36,20 @@ public class AccountService {
 		tempAccounts[tempAccounts.length-1] =newAccount;
 		this.accounts=tempAccounts;
 		
+				
+		}
+	
+	public void addAccount(Account newAccount) {
+		/*
+		 * 배열에추가
+		 */
+		Account[] tempAccounts=new Account[accounts.length+1];
+		for (int i = 0; i < accounts.length; i++) {
+			tempAccounts[i]=accounts[i];
+		}
+		tempAccounts[tempAccounts.length-1] =newAccount;
+		this.accounts=tempAccounts;
 	}
-
-	
-	
 	
 	/*
 	 1.은행계좌들 총계좌수출력메쏘드정의
@@ -139,6 +138,7 @@ public class AccountService {
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getOwner().equals(name)) {
 				accounts[i].print();
+				break;
 			}
 		}
 		

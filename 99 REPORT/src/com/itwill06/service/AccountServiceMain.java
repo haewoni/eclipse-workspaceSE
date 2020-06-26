@@ -7,9 +7,12 @@ public class AccountServiceMain {
 		AccountService accountService=new AccountService();
 		System.out.println("0.AccountService야 Account객체데이타여러개 인자로줄께 Account추가해줘(번호중복체크,배열사이즈증가)");
 		accountService.addAccount(1000,"THOU",85000,0.3);
+		
+		
 		System.out.println("0.AccountService야 Account객체한개 인자로줄께 Account추가해줘(번호중복체크,배열사이즈증가)");
 		Account newAccount=new Account(3000, "THREE", 33000, 3.3);
 		accountService.addAccount(newAccount);
+		
 		
 		System.out.println("1.AccountService야 은행계좌들 총계좌수출력해줘");
 		accountService.totAccountNumberPrint();
