@@ -20,16 +20,36 @@ public class AccountService {
 			new Account(8888, "qIMGG", 91000, 1.7),
 			new Account(9999, "mIMFF", 12000, 0.7),
 	};
-	
 	/*
-	 * 0.계좌객체를 인자로받아서 Account[]에추가
-	public void addAccount1() {
-		
-	}
-	public void addAccount2() {
-		
-	}
+	01.계좌데이터를 인자로 받아서 Account[]에추가
+	02.계좌객체를 인자로 받아서 Account[]에추가
 	*/
+	public void addAccount(int no, String owner, int balance, double iyul) {
+		Account newAccount = new Account();
+		/*
+		 * 배열에 추가
+		 */
+		Account[] tempAccounts=new Account[accounts.length+1];
+		for (int i = 0; i < accounts.length; i++) {
+			tempAccounts[i]=accounts[i];
+		}
+		tempAccounts[tempAccounts.length-1] =newAccount;
+		this.accounts=tempAccounts;
+	}
+	public void addAccount(Account newAccount) {
+		/*
+		 * 배열에 추가
+		 */
+		Account[] tempAccounts=new Account[accounts.length+1];
+		for (int i = 0; i < accounts.length; i++) {
+			tempAccounts[i]=accounts[i];
+		}
+		tempAccounts[tempAccounts.length-1] =newAccount;
+		this.accounts=tempAccounts;
+		
+	}
+
+	
 	
 	
 	/*
@@ -184,17 +204,33 @@ public class AccountService {
 	
 	/*
 	15.6666번계좌객체 인자로 받아서 이름,잔고,이율 수정(update)
-	public void updateAccount(Account updateAccount) {
+	*/
+	public void updateAccount(int no,String owner,int balance,double iyul) {
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo()==no) {
+				accounts[i].setAccountData(no, owner, balance, iyul);
+				break;
+			}
+		}
 		
 	}
-	*/
+	
 	
 	/*
-	번호,이름,잔고,이율 인자로받아서 계좌객체수정(update)
-	public void updateAccount(int no,String owner,int balance,double iyul) {
-		
-	}
+    15.6666번계좌객체 인자로 받아서 이름,잔고,이율 수정(update)
+	
 	*/
+	public void updateAccount(Account updateAccount) {
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo()==updateAccount.getNo()) {
+				accounts[i]=updateAccount;
+				break;
+			}
+		}
+	}
+
+
+	
 	 
 	
 	

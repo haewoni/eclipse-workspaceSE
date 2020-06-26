@@ -1,4 +1,5 @@
 public abstract class Employee {
+	public static final double INCENTIVE_RATE=0.1;
     private int no;
     private String name;
     private int pay;
@@ -16,13 +17,25 @@ public abstract class Employee {
 		
 	}
     /*
-     * 급여계산 메소드
+     * 급여계산 
      *  - 실제 구현 작업 불가능
      *  - 자식객체에서 재정의 해야하는 메소드
      *  - 재정의 강제
      */
 
     public abstract void calculatePay();
+    
+    /*
+     * 인센티브 계산
+     *   -재정의 금지(회장님)
+     */
+    public final double calculateIncentive() {
+    	double incentive=0.0;
+    	if(this.pay>=1000000) {
+    		incentive = this.pay*Employee.INCENTIVE_RATE;
+    	}
+    	return incentive;
+    }
 
 
 	public void print(){

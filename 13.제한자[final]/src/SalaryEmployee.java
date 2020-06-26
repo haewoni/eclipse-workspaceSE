@@ -16,6 +16,13 @@ public class SalaryEmployee extends Employee {
 		this.setPay(this.annualSalary/12);
 		
 	}
+	/*
+	 * <<Cannot override the final method>>
+	  public double calculateIncentive() {
+	  return 0.0;
+	  }
+	*/
+	
 	public void print() {
 		super.print();
 		System.out.println(annualSalary);

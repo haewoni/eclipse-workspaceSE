@@ -37,12 +37,28 @@ public class CarArrayMain {
 		
 		
 		
-		System.out.println("4.입차");
+		System.out.println("4.입차");   ///ipcha 메소드
+		Car car1=new Car("3166",7);
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i]==null) {
+				carArray[i]=car1;
+				carArray[i].print();
+				break;
+			}
+		}
+		
 		/*
 		 * 1.차량객체생성 
 		 * 2.빈자리찾아서대입
 		 */
-		System.out.println("5.차량번호 4567번  차   한대 정보출력");
+		
+		System.out.println("5.차량번호 4567번  차 한대 정보출력");
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i].getNo()=="4567") {
+				System.out.println(carArray);
+			}
+		}
+		
 		System.out.println("6.입차시간 8시이후 차 여러대 정보출력");
 		System.out.println("7.7891번차량 12시 출차");
 		/*
