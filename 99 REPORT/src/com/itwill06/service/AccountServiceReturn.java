@@ -30,20 +30,24 @@ public class AccountServiceReturn {
 			tempAccounts[i]=accounts[i];
 		}
 		tempAccounts[tempAccounts.length-1]=newAccount;
-		this.accounts=tempAccounts;
-		
+		accounts=tempAccounts;
 			
 		}
-		
 
 	 
 	/*
 	 * 0.계좌번호 인자로받아서 삭제해줘
-	public void deleteAccount(int no) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	 */
+	public void deleteAccount(int no) {
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo()==no) {
+				accounts[i]=null;
+				accounts[i]=accounts[accounts.length-1];
+				accounts[i].print();
+			}
+		}
+	}
 	/*
 	 * 1.은행계좌들 총계좌수 반환메써드
 	 */
@@ -83,6 +87,7 @@ public class AccountServiceReturn {
 		}
 		return findAccount;
 	}
+	
 	/*
 	 * 5.계좌잔고(50000원)인자로받아서 잔고이상인 계좌배열객체 참조변수반환
 	 */
@@ -91,12 +96,23 @@ public class AccountServiceReturn {
 		/*
 		 * A.만족하는객체의갯수구하기
 		 * findAccounts=new Account[3];
-		
+		 */
+		int accountNo = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getBalance()>=balance) {
+				accountNo= accounts.length;			
 		/*
 		 * B.만족하는객체주소담기
 		 */
+				findAccounts=accounts;	
 		
+			}
+			
+		}
 		return findAccounts;
+		
+		
+		
 	}
 	/*
 	 * 6.계좌이율(5.0)인자로받아서 인자이상인 계좌들배열객체 참조변수반환
