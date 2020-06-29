@@ -1,4 +1,4 @@
-public class AcademyMember extends Object {
+public abstract class AcademyMember extends Object {
 	private int no;
 	private String name;
 	

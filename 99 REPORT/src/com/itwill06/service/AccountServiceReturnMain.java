@@ -49,11 +49,12 @@ public class AccountServiceReturnMain {
 		System.out.println("5.AccountService객체야 "
 			+ "계좌잔고(50000원)를 인자로줄께 잔고이상인 계좌객체배열 참조변수반환해줘");
 		Account[] findAccounts = accountServiceReturn.findByBalance(50000);
-		System.out.println(findAccounts);
-		
-		
 		
 		System.out.println("6.AccountService객체야  계좌이율(5.0)을 인자로줄께 이율이상인 계좌객체배열 참조변수 반환해줘");
+		Account[] findAcountByIyul = accountServiceReturn.findByIyul(5.0);
+
+			
+		}
 		
 		
 		System.out.println("7.AccountService객체야  계좌주이름(AIM)을 인자로줄께 계좌객체배열 참조변수 반환해줘");
