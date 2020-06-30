@@ -61,16 +61,23 @@ public class AccountServiceReturnMain {
 
 		
 		System.out.println("7.AccountService객체야 계좌주이름(AIM)을 인자로줄께 계좌객체배열 참조변수 반환해줘");
-		Account[] findAccounts = accountSericeReturn.findByname("KIM");
+		Account[] findAccounts1 = accountServiceReturn.findByName("AIM");
+		for (int i = 0; i < findAccounts1.length; i++) {
+			findAccounts1[i].print();
+		}
 		
 		System.out.println("8.AccountService객체야 "
 				+ "계좌번호(6666번)와 입금할돈(4000원)줄께 입금해줘");
-		accountServiceReturn.ipGum(6666, 4000);
+		Account ipGumAccount = accountServiceReturn.ipGum(6666, 4000);
 		//accountServiceReturn.findByNo(6666);
+		ipGumAccount.print();
+		
+		
 		
 		
 		System.out.println("9.AccountService객체야 계좌번호(1111번)와 출금할돈(500원)줄께 출금해줘");
-		
+		Account chulGumAccount = accountServiceReturn.chulGum(1111,500);
+		chulGumAccount.print();
 		
 		System.out.println("10.AccountService객체야 계좌를 잔고순으로 오름차순정렬해줘");
 		accountServiceReturn.sortByBalance(AccountServiceReturn.ASCENDING);

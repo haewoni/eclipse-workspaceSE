@@ -8,7 +8,7 @@ public class AccountServiceReturn {
 	public static final int ASCENDING = 0;
 	public static final int DESCENDING = 1;
 
-	private Account[] accounts = { new Account(1111, "KIM", 85632, 5.9), new Account(2222, "JIM", 77000, 4.2),
+	private Account[] accounts = { new Account(1111, "KIM", 85500, 5.9), new Account(2222, "JIM", 77000, 4.2),
 			new Account(3333, "FIM", 56000, 1.2), new Account(4444, "SIM", 77000, 0.2),
 			new Account(5555, "GIM", 94000, 3.2), new Account(6666, "AIM", 56000, 6.2),
 			new Account(7777, "XIM", 33000, 7.2), new Account(8888, "QIM", 77000, 5.2),
@@ -148,54 +148,110 @@ public class AccountServiceReturn {
 	 * 7.계좌주이름(AIM) 인자로받아서 이름과 일치하는 계좌들 배열객체 참조변수반환
 	 */
 	public Account[] findByName(String name) {
-		Account[] findAccounts = null;
+		Account[] findAccounts1 = null;
+		int count = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getOwner().equals(name)) {
+				count++;				
+			}
+		}
+		findAccounts1 = new Account[count];
+		int index = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getOwner().equals(name)) {
+				findAccounts1[index] = accounts[i];
+				index++;
+			}
+		}
+		return findAccounts1;
+	
 		/*
 		 * A.만족하는객체의갯수구하기 findAccounts=new Account[3];
 		 * 
 		 * /* B.만족하는객체주소담기
 		 */
 
-		return findAccounts;
 	}
 
 	/*
 	 * 8.계좌번호(6666번)와 입금할돈(4000원)인자로받아서 입금
 	 */
-	public void ipGum(int no, int m) {
-		Account findAccount = this.findByNo(no);
-		findAccount.deposit(m);
+	public Account ipGum(int no, int m) {
+		Account ipGumAccount = new Account();
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo()== no) {
+				 accounts[i].deposit(m);
+				 ipGumAccount = accounts[i];
+			}
+		}
+		return ipGumAccount;
+		
 	}
+	
+	
+	
 
 	/*
 	 * 9.계좌번호(1111번)와 출금할돈(5000원)인자로받아서 출금
 	 */
-	public void chulGum(int no, int money) {
-
+	public Account chulGum(int no, int money) {
+		Account chulGumAccount = new Account();
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo()== no) {
+				 accounts[i].withdraw(money);
+				 chulGumAccount = accounts[i];
+			}
+		}
+		return chulGumAccount;
 	}
 
 	/*
-	 * 10.계좌를 잔고순으로 오름차순정렬 0 11.계좌를 잔고순으로 내림차순정렬 1
+	 * 10.계좌를 잔고순으로 오름차순정렬 0 
+	 * 11.계좌를 잔고순으로 내림차순정렬 1
 	 */
 	public void sortByBalance(int type) {
 		switch (type) {
 		case AccountServiceReturn.ASCENDING:
 			// 오름차순
+			for (int i = 0; i < accounts.length-1; i++) {
+				for (int j = 0; j < accounts.length-1; j++) {
+					if(accounts[j].getBalance() > accounts[j+1].getBalance()) {
+						Account tempAccount = accounts[j];
+						accounts[j] = accounts[j+1];
+						tempAccount = accounts[j+1];
+					}
+				}
+
+			}
 
 			break;
 
 		case AccountServiceReturn.DESCENDING:
 			// 내림차순
-
+			for (int i = 0; i < accounts.length-1; i++) {
+				for (int j = 0; j < accounts.length-1; j++) {
+					if(accounts[j].getBalance() < accounts[j+1].getBalance()) {
+						Account tempAccount = accounts[j];
+						accounts[j] = accounts[j+1];
+						tempAccount = accounts[j+1];
 			break;
+				
+		        }
+	         }
+		   }
 		}
-
 	}
 
 	/*
 	 * 13.계좌를 예금주이름순(사전순)으로 오름차순정렬(X)
 	 */
 	public void sortByOwnerAscending() {
-
+		for (int i = 0; i < accounts.length-1; i++) {
+			for (int j = 0; j < accounts.length-1; j++) {
+				if((int)accounts[j].getOwner() > (int) accounts[j+1].getOwner()) {
+					Account tempAccount = accounts[j];
+					accounts[j] = accounts[j+1];
+					tempAccount = accounts[j+1];
 	}
 
 	/*
