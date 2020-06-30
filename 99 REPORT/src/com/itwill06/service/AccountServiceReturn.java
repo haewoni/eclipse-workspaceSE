@@ -119,26 +119,33 @@ public class AccountServiceReturn {
 	 * 6.계좌이율(5.0)인자로받아서 인자이상인 계좌들배열객체 참조변수반환
 	 */
 	public Account[] findByIyul(double iyul) {
-		Account[] findAccounts = null;
+		Account[] findAccountByIyul = null;
 		/*
 		 * A.만족하는객체의갯수구하기 findAccounts=new Account[3];
 		 */
-		int accountNo = 0;
+		int count= 0;
 		for (int i = 0; i < accounts.length; i++) {
-			if (accounts[i].getIyul() >= iyul) {
-				accountNo = accounts.length;
+			if(accounts[i].getIyul()>=iyul) {
+				count++;
+			}
+		}
 				/*
 				 * B.만족하는객체주소담기
 				 */
-				findAccounts = accounts;
+		findAccountByIyul = new Account[count];
+		int index =0;
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getIyul()>=iyul) {
+				findAccountByIyul[index] = accounts[i];
+				index++;
 			}
 		}
-
-		return findAccounts;
+	
+		return findAccountByIyul;
 	}
 
 	/*
-	 * 7.계좌주이름(AIM) 인자로받아서 이름과일치하는계좌들배열객체 참조변수반환
+	 * 7.계좌주이름(AIM) 인자로받아서 이름과 일치하는 계좌들 배열객체 참조변수반환
 	 */
 	public Account[] findByName(String name) {
 		Account[] findAccounts = null;

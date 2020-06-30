@@ -49,16 +49,19 @@ public class AccountServiceReturnMain {
 		System.out.println("5.AccountService객체야 "
 			+ "계좌잔고(50000원)를 인자로줄께 잔고이상인 계좌객체배열 참조변수반환해줘");
 		Account[] findAccounts = accountServiceReturn.findByBalance(50000);
-		
-		System.out.println("6.AccountService객체야  계좌이율(5.0)을 인자로줄께 이율이상인 계좌객체배열 참조변수 반환해줘");
-		Account[] findAcountByIyul = accountServiceReturn.findByIyul(5.0);
-
-			
+		for (int i = 0; i < findAccounts.length; i++) {
+			findAccounts[i].print();
 		}
 		
+		System.out.println("6.AccountService객체야  계좌이율(5.0)을 인자로줄께 이율이상인 계좌객체배열 참조변수 반환해줘");
+		Account[] findAccountByIyul = accountServiceReturn.findByIyul(5.0);
+		for (int i = 0; i < findAccountByIyul.length; i++) {
+			findAccountByIyul[i].print();
+		}
+
 		
-		System.out.println("7.AccountService객체야  계좌주이름(AIM)을 인자로줄께 계좌객체배열 참조변수 반환해줘");
-		
+		System.out.println("7.AccountService객체야 계좌주이름(AIM)을 인자로줄께 계좌객체배열 참조변수 반환해줘");
+		Account[] findAccounts = accountSericeReturn.findByname("KIM");
 		
 		System.out.println("8.AccountService객체야 "
 				+ "계좌번호(6666번)와 입금할돈(4000원)줄께 입금해줘");
