@@ -218,13 +218,11 @@ public class AccountServiceReturn {
 					if(accounts[j].getBalance() > accounts[j+1].getBalance()) {
 						Account tempAccount = accounts[j];
 						accounts[j] = accounts[j+1];
-						tempAccount = accounts[j+1];
+						 accounts[j+1] = tempAccount;
 					}
 				}
 
 			}
-
-			break;
 
 		case AccountServiceReturn.DESCENDING:
 			// 내림차순
@@ -233,13 +231,13 @@ public class AccountServiceReturn {
 					if(accounts[j].getBalance() < accounts[j+1].getBalance()) {
 						Account tempAccount = accounts[j];
 						accounts[j] = accounts[j+1];
-						tempAccount = accounts[j+1];
-			break;
-				
-		        }
+						accounts[j+1] = tempAccount;
+	
+		        
 	         }
 		   }
 		}
+	 }
 	}
 
 	/*
@@ -248,17 +246,34 @@ public class AccountServiceReturn {
 	public void sortByOwnerAscending() {
 		for (int i = 0; i < accounts.length-1; i++) {
 			for (int j = 0; j < accounts.length-1; j++) {
-				if(accounts[j].getOwner()  accounts[j+1].getOwner()) {
+				if(0<accounts[j].getOwner().compareTo(accounts[j+1].getOwner())) {
 					Account tempAccount = accounts[j];
 					accounts[j] = accounts[j+1];
-					tempAccount = accounts[j+1];
+					 accounts[j+1] = tempAccount;
+				}
+			}
+		}
 	}
+	
+	
+	
+	
 
 	/*
 	 * 14.계좌객체 인자로 받아서 수정(update)
 	 */
 	public void updateAccount(Account updateAccount) {
+		for (int i = 0; i < accounts.length; i++) {
+			if(updateAccount.getNo()==accounts[i].getNo()) {
+				accounts[i] = updateAccount;
+				
+				
+			}
+			break;
+		
+		}
+	}
 
 	}
 
-}
+

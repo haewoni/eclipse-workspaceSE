@@ -90,10 +90,12 @@ public class AccountServiceReturnMain {
 		
 		
 		System.out.println("13.AccountService객체야 계좌를 예금주이름순(사전순)으로 오름차순정렬");
-		
+		accountServiceReturn.sortByOwnerAscending();
+		accountServiceReturn.print();
 		
 		System.out.println("14.AccountService야 계좌객체데이타줄께 이름,잔고,이율 수정(update)해줘");
-		
-	}
+		Account updateAccount = new Account(6666,"AIM",56000,3.5);
+		updateAccount.print();
+		}
 
 }
