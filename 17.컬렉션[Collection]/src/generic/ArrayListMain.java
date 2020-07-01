@@ -1,3 +1,4 @@
+package generic;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -22,9 +23,10 @@ public class ArrayListMain {
 			tempAccount.print();
 			}
 		System.out.println("-------------ArrayList[참조형]---------------");
-		ArrayList accountList = new ArrayList(5);
+		ArrayList<Account> accountList = new ArrayList<Account>();
 		System.out.println(accountList.toString());
 		System.out.println("#size:"+accountList.size());
+		
 		System.out.println("***************1.add*****************");
 		accountList.add(acc1);
 		accountList.add(acc2);
@@ -36,29 +38,30 @@ public class ArrayListMain {
 		System.out.println("#size:"+accountList.size());
 		//accountList.add(acc3);  --->중복허용
 		System.out.println(accountList.toString());
+		
 		System.out.println("***************2.set*****************");
 		accountList.set(3, new Account(4445,"FOUR",44000,0.4));
 		System.out.println("#size:"+accountList.size());
 		System.out.println(accountList.toString());
+		
 		System.out.println("***************3.get*****************");
-		Object getObject = accountList.get(1);
-		Account getAccount = (Account)getObject;
+		Account getAccount = accountList.get(1);
 		getAccount.print();
 		getAccount = (Account)accountList.get(4);
 		getAccount.print();
+		
 		System.out.println("***************3.remove*****************");
 		accountList.remove(accountList.size()-1);
 		System.out.println("#size:"+accountList.size());
 		System.out.println(accountList);
+		
 		System.out.println("***************전체출력****************");
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount=(Account)accountList.get(i);
-			tempAccount.print();
+			accountList.get(i).print();
 		}
 		System.out.println("--------------------전체출력[enhanced for]--------------------");
-		for (Object account : accountList) {
-			Account tempAccount = (Account)account;
-			tempAccount.print();
+		for (Account account : accountList) {
+			account.print();
 						
 		}
 		System.out.println("**************계좌번호 3333번 계좌 출력******************");
@@ -110,7 +113,7 @@ public class ArrayListMain {
 		System.out.println(accountList);
 		/*****************iteration*********************/
 		System.out.println("##################### iteration ######################");
-		Iterator accountIter = accountList.iterator();
+		Iterator<Account> accountIter = accountList.iterator();
 		while(accountIter.hasNext()) {
 			Account tempAccount = (Account)accountIter.next();
 			tempAccount.print();

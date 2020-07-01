@@ -1,3 +1,4 @@
+package generic;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -11,7 +12,7 @@ public class HashSetMain {
 		Account acc4 = new Account(4444, "SANG", 12000, 0.5);
 		Account acc5 = new Account(5555, "KING", 99000, 0.8);
 
-		HashSet accountSet = new HashSet(); // 중복x 인덱스사용x 순서x
+		HashSet<Account> accountSet = new HashSet<Account>(); // 중복x 인덱스사용x 순서x
 		System.out.println("#size:" + accountSet.size());
 		System.out.println("*******************1.add *********************");
 		accountSet.add(acc1);
@@ -53,6 +54,8 @@ public class HashSetMain {
 		while(accountIter.hasNext()) {
 			Account tempAccount = (Account)accountIter.next();
 			tempAccount.print();
+			
+
 			
 		}
 	}
