@@ -10,9 +10,17 @@ public class Lotto {
 		this.gerenateNumber();		
 	}
 	private void gerenateNumber() {
-		for (int i = 0; i < noArray.length; i++)
+		for (int i = 0; i < noArray.length; i++) {
 			noArray[i] = (int)(Math.random()*45)+1;
+		for (int j = 0; j < i; j++) {
+			if(noArray[i]==noArray[j]) {
+				System.out.println("--중복--");
+				i--;
+				break;
+			}
 		}
+	}
+}
 	
 	public void print() {
 		for (int i = 0; i < noArray.length; i++) {

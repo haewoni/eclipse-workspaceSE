@@ -248,7 +248,7 @@ public class AccountServiceReturn {
 	public void sortByOwnerAscending() {
 		for (int i = 0; i < accounts.length-1; i++) {
 			for (int j = 0; j < accounts.length-1; j++) {
-				if((int)accounts[j].getOwner() > (int) accounts[j+1].getOwner()) {
+				if(accounts[j].getOwner()  accounts[j+1].getOwner()) {
 					Account tempAccount = accounts[j];
 					accounts[j] = accounts[j+1];
 					tempAccount = accounts[j+1];

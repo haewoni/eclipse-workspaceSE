@@ -12,6 +12,13 @@ public class LottoMain {
 			//중복체크
 			System.out.println("count:"+i);
 			lottoNo[i] = (int)(Math.random()*45)+1;
+			for (int j = 0; j < i; j++) {
+				if(lottoNo[i]==lottoNo[j]) {
+					System.out.println("--중복--");
+					i--;
+					break;
+				}
+			}
 		}
 		/*
 		 * 번호 6개 출력
