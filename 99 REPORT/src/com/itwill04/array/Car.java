@@ -1,6 +1,6 @@
 package com.itwill04.array;
 	/*
-	 * 주차장프로그램 에서 차객체(instance)를 생성하기위한위한클래스
+	 * 주차장프로그램에서 차객체(instance)를 생성하기 위한 클래스
 	 */
 	public class Car {
 		/*<< 속성 >>
@@ -13,6 +13,7 @@ package com.itwill04.array;
 		private int outTime;//출차시간
 		private int fee;//주차요금
 		private static int feePerHour = 1000;//시간당 주차요금
+		
 		public Car() {
 		
 		}
@@ -74,6 +75,11 @@ package com.itwill04.array;
 		public void print() {
 			
 			System.out.printf("%8s %6d %8d %10d %n",this.no,this.inTime,this.outTime,this.fee);
+		}
+		
+		public void printNo() {
+			
+			System.out.printf("%3s %3d %n",this.no,this.inTime);
 		}
 		
 		//getter setter
