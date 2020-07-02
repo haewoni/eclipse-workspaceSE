@@ -5,6 +5,7 @@ public class CarArrayMain {
 		/*
 		 * NullPointerException
 		 */
+		//배열객체생성
 		Car[] carArray= {
 				null,null,new Car("2133", 12),null,null,	
 				null,null,new Car("1890", 11),null,null,
@@ -20,6 +21,7 @@ public class CarArrayMain {
 				carArray[i].print();			
 		}
 		System.out.println();
+		
 		
 		
 		System.out.println("2.주차전체구획수:"+carArray.length);
