@@ -7,7 +7,7 @@ package com.itwill06.service.academy;
  *  Delete
  */
 public class AcademyMemberService {
-	
+	//8개짜리 배열객체 생성
 	private AcademyMember[] members={
 			new AcademyStudent(1, "KIM", "자바"),
 			new AcademyStudent(2, "LEE", "리눅스"),
@@ -19,11 +19,11 @@ public class AcademyMemberService {
 			new AcademyStaff(8, "AIM", "영업"),
 			new AcademyStaff(9, "QIM", "생산")
 	};
-	
+	//getter
 	public AcademyMember[] getMembers() {
 		return members;
 	}
-	
+	//print 메소드
 	public void print() {
 		for (int i = 0; i < members.length; i++) {
 			AcademyMember academyMember = members[i];
