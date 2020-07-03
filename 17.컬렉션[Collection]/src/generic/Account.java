@@ -1,6 +1,6 @@
 package generic;
 
-public class Account {
+public class Account implements Comparable<Account> {
 	/*
 	 * 멤버필드
 	 */
@@ -89,6 +89,13 @@ public class Account {
 	}
 	public void setIyul(double iyul) {
 		this.iyul = iyul;
+	}
+	
+	@Override
+	public int compareTo(Account nextAccount) {
+		System.out.println("---compareTo---");
+		return this.getBalance()-nextAccount.getBalance();
+	  //양수면 변경,음수면 변경x
 	}
 	
 	
