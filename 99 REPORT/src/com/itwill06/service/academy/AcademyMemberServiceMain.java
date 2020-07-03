@@ -18,7 +18,7 @@ public class AcademyMemberServiceMain {
 		m2.print();
 		
 		System.out.println("2-2.이름 KIM 인 AcademyMember 배열객체 참조변수반환해줘");
-		AcademyMember m3 =  academyMemberService.findAcademyMemberByName("KIM");
+		AcademyMember m3 = academyMemberService.findAcademyMemberByName(KIM);
 		m3.print();
 		
 		System.out.println("3.AcademyMember 중에서 AcademyStudent객체배열 참조변수반환해줘");

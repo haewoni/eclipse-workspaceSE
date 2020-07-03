@@ -48,11 +48,12 @@ public class AcademyMemberService {
 		AcademyMember[] findMembers=null;  //배열 객체 생성, 초기화
 		for (int i = 0; i < members.length; i++) {
 			if(members[i].getName().equals(members[i].getName())) {
-				findMembers = members[i];
+				findMembers = members;
 			}
 		}
+		return findMembers;
 	}
-	return findMembers;
+
 	/*
 	 * 강사 or 학생 or Staff들 반환( instanceof연산자)
 	 * 	
