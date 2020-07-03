@@ -30,21 +30,29 @@ public class AcademyMemberService {
 			academyMember.print();
 		}
 	}
+	//번호로 맴버 찾기 메소드
 	public AcademyMember findAcademyMemberByNo(int no) {
-		AcademyMember findMember=null;
+		AcademyMember findMember=null; //배열 객체 생성,초기화
 		for (int i = 0; i < members.length; i++) {
 			if(members[i].getNo()==no) {
-				findMember = members[i];
+				findMember = members[i];  //객체 담기
 				break;
 			}
 		}
 		
-		return findMember;
+		return findMember;  //반환
 	}
+	
+	//이름으로 멤버 찾기 메소드
 	public AcademyMember[] findAcademyMemberByName(String name) {
-		AcademyMember[] findMembers=null;
-		return findMembers;
+		AcademyMember[] findMembers=null;  //배열 객체 생성, 초기화
+		for (int i = 0; i < members.length; i++) {
+			if(members[i].getName().equals(members[i].getName())) {
+				findMembers = members[i];
+			}
+		}
 	}
+	return findMembers;
 	/*
 	 * 강사 or 학생 or Staff들 반환( instanceof연산자)
 	 * 	

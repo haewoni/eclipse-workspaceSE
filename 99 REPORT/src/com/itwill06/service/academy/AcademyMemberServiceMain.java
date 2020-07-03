@@ -7,12 +7,19 @@ public class AcademyMemberServiceMain {
 		
 		System.out.println("1.AcademyMember 전체출력");
 		academyMemberService.print();
+		
 		System.out.println("2-1.번호 1 번 AcademyMember 객체 참조변수반환해줘");
 		AcademyMember m1=
 				academyMemberService.findAcademyMemberByNo(1);
 		m1.print();
+		
 		System.out.println("2-1.번호 2 번 AcademyMember 객체 참조변수반환해줘");
+		AcademyMember m2 = academyMemberService.findAcademyMemberByNo(2);
+		m2.print();
+		
 		System.out.println("2-2.이름 KIM 인 AcademyMember 배열객체 참조변수반환해줘");
+		AcademyMember m3 =  academyMemberService.findAcademyMemberByName("KIM");
+		m3.print();
 		
 		System.out.println("3.AcademyMember 중에서 AcademyStudent객체배열 참조변수반환해줘");
 		AcademyMember[] students = academyMemberService.findAcademyStudents();
