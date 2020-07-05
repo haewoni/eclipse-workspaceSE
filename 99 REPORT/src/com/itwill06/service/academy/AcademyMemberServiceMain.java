@@ -17,9 +17,11 @@ public class AcademyMemberServiceMain {
 		AcademyMember m2 = academyMemberService.findAcademyMemberByNo(2);
 		m2.print();
 		
-		System.out.println("2-2.이름 KIM 인 AcademyMember 배열객체 참조변수반환해줘");
-		AcademyMember m3 = academyMemberService.findAcademyMemberByName(KIM);
-		m3.print();
+		System.out.println("2-2.이름 KIM 인 AcademyMember 배열객체 참조변수 반환해줘");
+		AcademyMember[] m3 = academyMemberService.findAcademyMemberByName("KIM");
+		for (int i = 0; i < m3.length; i++) {
+			m3[i].print();
+		}
 		
 		System.out.println("3.AcademyMember 중에서 AcademyStudent객체배열 참조변수반환해줘");
 		AcademyMember[] students = academyMemberService.findAcademyStudents();
@@ -28,6 +30,11 @@ public class AcademyMemberServiceMain {
 		}
 		System.out.println("3.AcademyMember 중에서 AcademyStaff객체배열 참조변수반환해줘");
 		System.out.println("3.AcademyMember 중에서 AcademyGangsa객체배열 참조변수반환해줘");
+		AcademyMember[] gangsas = academyMemberService.findAcademyGangsas();
+		for (int i = 0; i < gangsas.length; i++) {
+			gangsas[i].print();
+		}
+		
 		
 		System.out.println(
 		"4.AcademyMember 중에서 자바반인  AcademyStudent객체들 배열참조변수반환해줘");
