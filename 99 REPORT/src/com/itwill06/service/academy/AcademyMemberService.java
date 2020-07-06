@@ -108,10 +108,26 @@ public class AcademyMemberService {
 		}
 		return gangsas;
 		
-		
 	}
+	
 	public AcademyMember[] findAcademyStaffs(){
-		return null;
+		AcademyMember[] staffs = null;
+		int count = 0;
+		for (int i = 0; i < members.length; i++) {
+			if(members[i] instanceof AcademyStaff) {
+				count++;
+			}
+		}
+		staffs = new AcademyMember[count];
+		
+		int index = 0;
+		for (int i = 0; i < members.length; i++) {
+			if(members[i] instanceof AcademyStaff) {
+				staffs[index] = members[i];
+				index++;
+			}
+		}
+		return staffs;
 	}
 	
 	public AcademyMember[] findAcademyMembersByType(int type) {

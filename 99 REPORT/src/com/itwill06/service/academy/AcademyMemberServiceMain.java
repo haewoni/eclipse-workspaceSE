@@ -29,6 +29,10 @@ public class AcademyMemberServiceMain {
 			students[i].print();
 		}
 		System.out.println("3.AcademyMember 중에서 AcademyStaff객체배열 참조변수반환해줘");
+		AcademyMember[] staffs = academyMemberService.findAcademyStaffs();
+		for (int i = 0; i < staffs.length; i++) {
+			staffs[i].print();
+		}
 		System.out.println("3.AcademyMember 중에서 AcademyGangsa객체배열 참조변수반환해줘");
 		AcademyMember[] gangsas = academyMemberService.findAcademyGangsas();
 		for (int i = 0; i < gangsas.length; i++) {

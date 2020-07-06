@@ -1,8 +1,8 @@
 /*
 쓰레드(thread)(실행흐름): 
-   - 프로그램코드를 실행시키는 힘  
+   - 프로그램 코드를 실행시키는 힘  
    - 메인쓰레드,AWT 쓰레드,사용자 정의 쓰레드
-   - 언제 만드냐--> 두가지 일을 동시에 해야할때..
+   - 언제 만드냐--> 두가지 일을 동시에 해야할 때..
  
  
 - 쓰레드객체 만드는 방법(형식)
@@ -11,9 +11,9 @@
 	type A:
 	1. Thread 클래스를 상속받는다.
 	2. Thread class의 run method를 overriding 한다.
-		동사원형:public void run()
+		동사원형:public void run()   //객체 만들기 전 작업
 	3. Thread 객체를 생성한다.
-	4. Thread 객체를 통해서 Thread를 시작시킨다.
+	4. Thread 객체를 통해서/ Thread를 시작시킨다.
 	
     type B:
 	1. Runnable interface를 implements 한다.

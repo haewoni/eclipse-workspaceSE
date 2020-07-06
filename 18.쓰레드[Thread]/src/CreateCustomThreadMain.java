@@ -6,7 +6,7 @@ public class CreateCustomThreadMain {
 		// 3. thread 객체 생성
 		CreateCustomThread cct = new CreateCustomThread();
 		System.out.println("2.main");
-		// 4. thread 객체 통해 thread 시작시킨다
+		// 4. thread 객체 통해/ thread 시작시킨다
 		cct.setName("myThread");
 		cct.start();
 		/*
