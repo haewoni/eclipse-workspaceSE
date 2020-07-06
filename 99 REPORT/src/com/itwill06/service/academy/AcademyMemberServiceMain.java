@@ -39,18 +39,40 @@ public class AcademyMemberServiceMain {
 			gangsas[i].print();
 		}
 		
-		
 		System.out.println(
 		"4.AcademyMember 중에서 자바반인  AcademyStudent객체들 배열참조변수반환해줘");
+		AcademyMember[] javaStudents = academyMemberService.findAcademyStudentsByBan("자바");
+		for (int i = 0; i < javaStudents.length; i++) {
+			javaStudents[i].print();
+		}
+		
 		System.out.println(
 		"4.AcademyMember 중에서 영업부서인 AcademyStaff  객체들 배열참조변수반환해줘");
+		AcademyMember[] salesStaff = academyMemberService.findAcademyStaffsByDepart("영업");
+		for (int i = 0; i < salesStaff.length; i++) {
+			salesStaff[i].print();
+		}
+		
+		
 		System.out.println(
-		"4.AcademyMember 중에서 자바과목인 AcademyGangsa 객체들 배열참조변수반환해줘");
+		"4.AcademyMember 중에서 프로그래밍 과목인 AcademyGangsa 객체들 배열참조변수반환해줘");
+		AcademyMember[] pGangsa = academyMemberService.findAcademyGangsasBySubject("프로그래밍");
+		for (int i = 0; i < pGangsa.length; i++) {
+			pGangsa[i].print();
+		}
+		
 		System.out.println("---------------------------------------------");
+		
+		
 		System.out.println(
 		"5.AcademyMember 중에서 자바반인  AcademyStudent객체들 배열참조변수반환해줘");
+		
+		
+	
 		System.out.println(	
 	    "5.AcademyMember 중에서 영업부서인 AcademyStaff  객체들 배열참조변수반환해줘");
+		
+		
 		System.out.println(
 		"5.AcademyMember 중에서 자바과목인 AcademyGangsa 객체들 배열참조변수반환해줘");
 	}

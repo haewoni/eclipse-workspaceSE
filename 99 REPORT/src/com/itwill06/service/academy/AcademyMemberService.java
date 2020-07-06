@@ -130,25 +130,97 @@ public class AcademyMemberService {
 		return staffs;
 	}
 	
+	
+	
 	public AcademyMember[] findAcademyMembersByType(int type) {
 		AcademyMember[] findMembers=null;
 		return findMembers;
 	}
 	
-	/*
+	
 	public AcademyMember[] findAcademyStudentsByBan(String ban) {
 		AcademyMember[] findMembers=null;
+		//1. 학생 객체 찾기
+		int count = 0;
+		for (int i = 0; i < members.length; i++) {
+			if(members[i] instanceof AcademyStudent)  {  //학생객체 찾기
+				AcademyStudent st = (AcademyStudent)members[i]; //Student 객체 생성,캐스팅
+				if(st.getBan().equals(ban)) { 
+					count++;   //자바반 학생 수 세기
+				}
+			}
+		}
+		//2. 찾은 자바반 학생 배열객체에 집어넣기
+		int index= 0;
+		findMembers = new AcademyMember[count];
+		for (int i = 0; i < members.length; i++) {
+			if(members[i] instanceof AcademyStudent) {
+				AcademyStudent st1 =(AcademyStudent)members[i];
+				if(st1.getBan().equals(ban)) {
+				findMembers[index] = members[i];
+				index++;
+				}
+			}
+		}
+		
 		return findMembers;
 	}
-	public AcademyMember[] findAcademyGangsasBySubject(String subject) {
+	
+	
+	public AcademyMember[] findAcademyGangsasBySubject(String subject) { //강사찾기메소드 생성, String 타입 과목 인자
 		AcademyMember[] findMembers=null;
-		return findMembers;
+		int count = 0;
+		for (int i = 0; i < members.length; i++) {
+			if(members[i] instanceof AcademyGangsa) {
+				AcademyGangsa gs = (AcademyGangsa)members[i];
+				if(gs.getSubject().equals(subject)) {
+					count++;
+				}
+			}
+		}
+			findMembers = new AcademyMember[count];
+			int index = 0 ;
+			for (int i = 0; i < members.length; i++) {
+				if(members[i] instanceof AcademyGangsa) {
+					AcademyGangsa gs1=(AcademyGangsa)members[i];
+					if(gs1.getSubject().equals(subject)) {
+						findMembers[index] = members[i];
+						index++;
+					}
+				}
+			}
+			return findMembers;
+		
 	}
+		
+	
+
 	public AcademyMember[] findAcademyStaffsByDepart(String depart) {
 		AcademyMember[] findMembers=null;
+		int count = 0;
+		for (int i = 0; i < members.length; i++) {
+			if(members[i] instanceof AcademyStaff) {
+				AcademyStaff stf = (AcademyStaff)members[i];
+				if(stf.getDepart().equals(depart)) {
+					count++;
+				}				
+			}
+			
+		}
+		findMembers = new AcademyMember[count];
+		int index = 0;
+		for (int i = 0; i < members.length; i++) {
+			if(members[i] instanceof AcademyStaff) {
+				AcademyStaff stf1 = (AcademyStaff)members[i];
+				if(stf1.getDepart().equals(depart)) {
+					findMembers[index] = members[i];
+					index++;
+				}
+			}
+		}
 		return findMembers;
 	}
-	*/
+	
 	/*
 	 * 자바반     학생들 찾아서 반환해줘 
 	 * 리눅스과목 강사들 찾아서 반환해줘 
