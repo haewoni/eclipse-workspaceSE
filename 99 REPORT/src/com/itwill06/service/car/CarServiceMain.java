@@ -2,7 +2,8 @@ package com.itwill06.service.car;
 public class CarServiceMain {
 	public static void main(String[] args) {
 		CarService carService=new CarService(10);
-		System.out.println("0.CarService객체야 차객체인자로줄께 입차시켜줘");
+		
+		System.out.println("0.CarService객체야 차객체 인자로 줄께 입차시켜줘");
 		boolean isSuccess = carService.ipChar(new Car("2344",3 ));
 		if(!isSuccess) {
 			System.out.println("만차..");

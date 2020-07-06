@@ -9,9 +9,9 @@ public class CarService {
 		carArray=new Car[count];
 	}
 	/*
-	0. 차객체인자로받아서 입차후 성공실패여부반환
-	     - 주차장이 만차이면 입차실패
-	     - 차량번호중복체크
+	0. 차객체 인자로 받아서 입차 후 성공 실패 여부 반환
+	     - 주차장이 만차이면 입차 실패
+	     - 차량번호 중복 체크
 	*/
 	public boolean ipChar(Car inCar) {
 		boolean isSuccess=false;
