@@ -34,15 +34,33 @@ public class CarServiceMain {
 		System.out.println("3.CarService객체야 주차가능주차구획수반환해줘");
 		int ap = carService.availablePark();
 		System.out.println(ap);
+		System.out.println();
 		
 		System.out.println("5.CarService객체야 차량번호(4567번) 인자로줄께  차객체한대 참조변수반환해줘");
-		
+		Car fc = carService.findCar("4567");
+		if(fc==null) {
+			System.out.println("해당 차량이 없습니다");		
+		} else {
+			Car.headerPrint();
+			fc.print();			
+		}
+		System.out.println();
+	
 		
 		System.out.println("6.CarService객체야 입차시간(8시이후) 인자로줄께 차객체배열 참조변수반환해줘");
-		
+		Car[] fcs = carService.findCars(8);
+		for (int i = 0; i < fcs.length; i++) {
+			if(fcs[i]!=null) {
+				Car.headerPrint();
+				fcs[i].print();
+				break;
+			}else {
+				System.out.println("해당 차량이 없습니다");
+	    	}
+		}
 		
 		System.out.println("7.CarService객체야 차량번호(7891번) 출차시간(12시)인자로줄께 출차시켜줘");
-		
+		carService.chulcha("7891",12);
 	}
 
 }

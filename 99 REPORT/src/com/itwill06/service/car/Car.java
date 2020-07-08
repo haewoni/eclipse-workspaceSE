@@ -27,7 +27,7 @@ public class Car {
 		this.setInTime(inTime);
 	}
 	/*
-	 * 출차
+	 * 
 	 */
 	public void chulCha(int outTime) {
 		this.setOutTime(outTime);
