@@ -76,7 +76,7 @@ public class CarService {
 	}
 	
 	
-	//6. 입차시간(8시이후)인자받아서 차객체배열 참조변수반환
+	//6. 입차시간(8시이후)인자받아서 차객체배열 참조변수반환////???????
 	public Car[] findCars(int time) {
 		Car[] fcs= null;
 		int count = 0;

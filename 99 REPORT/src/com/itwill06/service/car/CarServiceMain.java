@@ -53,7 +53,6 @@ public class CarServiceMain {
 			if(fcs[i]!=null) {
 				Car.headerPrint();
 				fcs[i].print();
-				break;
 			}else {
 				System.out.println("해당 차량이 없습니다");
 	    	}

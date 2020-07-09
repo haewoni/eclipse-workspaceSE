@@ -34,15 +34,33 @@ public class StudentService {
 	 * 1. 전체학생총점,평균,평점계산
 	 */
 	public void calculate() {
+		Student.headerPrint();
 		for (int i = 0; i < students.length; i++) {
 			students[i].calculateTot();
 			students[i].calculateAvg();
 			students[i].calculateGrade();
+			students[i].print();
+			
 		}
 	}
 	/*
-	 * 2. 전체학생 총점으로 석차계산
+	 * 2. 전체학생 총점으로 석차계산 /////???????
 	 */
+	public void calRank() {
+		for (int i = 0; i < students.length; i++) {
+			int rank = 1;
+			for (int j = 0; j < students.length; j++) {
+				if(students[i].getTot()<students[j].getTot()) {
+					rank++;
+				}
+			}
+			students[i].setRank(rank);
+		}
+		
+	}
+	
+	
+	
 	/*
 	 * 3. 전체학생반환
 	 */

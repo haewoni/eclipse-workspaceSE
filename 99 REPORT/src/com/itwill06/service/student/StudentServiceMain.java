@@ -4,15 +4,24 @@ package com.itwill06.service.student;
 public class StudentServiceMain {
 
 	public static void main(String[] args) {
-		StudentService studentService=new StudentService();
+		StudentService studentService=new StudentService(); //참조변수 객체 생성
+		
 		/*
 		 * 1. 전체학생총점,평균,평점계산
 		 */
 		System.out.println("1. 전체학생총점,평균,평점계산");
+		studentService.calculate();
+		System.out.println();
+		
+		
 		/*
 		 * 2. 전체학생 총점으로 석차계산
 		 */
 		System.out.println("2. 전체학생 총점으로 석차계산");
+		studentService.calRank();
+		studentService.print();
+		
+		
 		/*
 		 * 3. 전체학생반환
 		 */
