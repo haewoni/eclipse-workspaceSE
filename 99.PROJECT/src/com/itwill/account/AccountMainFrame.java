@@ -111,6 +111,14 @@ public class AccountMainFrame extends JFrame {
 				String ownerStr=ownerTF.getText();
 				String balanceStr=balanceTF.getText();
 				String iyulStr=iyulTF.getText();
+				if(noStr.equals("")||
+						ownerStr.equals("")|
+						balanceStr.equals("")|
+						iyulStr.equals("")) {
+						  JOptionPane.showMessageDialog(null, "모든 필드를 입력하세요!!!");
+						  noTF.requestFocus();
+						  return;
+		     	    }
 				
 				int no = new Integer(noStr);
 				int balance=new Integer(balanceStr);
@@ -121,6 +129,11 @@ public class AccountMainFrame extends JFrame {
 				
 				if(isAdd) {
 					JOptionPane.showMessageDialog(null, "계좌추가성공");
+					noTF.setText("");
+					ownerTF.setText("");
+					balanceTF.setText("");
+					iyulTF.setText("");
+					noTF.requestFocus();
 				}else {
 					JOptionPane.showMessageDialog(null, no+" 는 이미존재하는 번호입니다" );
 					noTF.requestFocus();
