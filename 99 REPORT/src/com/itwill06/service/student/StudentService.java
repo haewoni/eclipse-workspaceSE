@@ -59,11 +59,11 @@ public class StudentService {
 		
 	}
 	
-	
-	
 	/*
 	 * 3. 전체학생반환
 	 */
+	
+	
 	/*
 	 * 4. 번호3번 학생한명 반환  
 	 */
@@ -77,12 +77,62 @@ public class StudentService {
 		}
 		return findStudent;
 	}
+	
 	/*
 	 * 5. 학점A인 학생들 반환
 	 */
+	public Student[] findByGrade(char grade) {
+		// 1. 학점 A인 학생 수 찾기
+		Student[] stdGrade = null;
+		int count = 0;
+		for (int i = 0; i < students.length; i++) {
+			if(students[i].getGrade()==grade) {
+				count++;
+				}
+		}
+		//2. 학점 A 학생수 크기의 배열 객체 생성 후 대입
+		stdGrade = new Student[count];
+		int index = 0;
+		for (int i = 0; i < students.length; i++) {
+			if(students[i].getGrade()==grade) {
+				stdGrade[index] = students[i];	
+				index++; 
+			}
+		}
+		return stdGrade;
+		
+	}
+	
+	/*
+	 * 5-1. 이름이 KIM인 학생들 반환
+	 */
+	public Student[] findByName(String name) {
+		Student[] stdName = null;
+		int count = 0;
+		for (int i = 0; i < students.length; i++) {
+			if(students[i].getName().equals(name)) {
+				count++;
+			}
+		}
+		stdName = new Student[count];
+		int index = 0;
+		for (int i = 0; i < stdName.length; i++) {
+			if(students[i].getName().equals(name)) {
+				stdName[index] = students[i];
+				index++;
+			}
+		}
+		return stdName;
+	}
+	
+	
 	/*
 	 * 6. 학생총점으로 오름차순정렬
 	 */
+	
+	
+	
+	
 	/*
 	  7. 학생학점순으로 오름차순정렬
 	 */
