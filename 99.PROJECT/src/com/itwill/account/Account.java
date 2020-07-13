@@ -1,9 +1,11 @@
 package com.itwill.account;
 
+import java.io.Serializable;
+
 /*
  * 은행계좌객체를 추상화한클래스
  */
-public class Account {
+public class Account implements Serializable {
 	/*
 	 * 속성(멤버변수)
 	 */
@@ -89,7 +91,7 @@ public class Account {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return this.no+"\t"+this.owner+"\t"+this.balance+"\t"+this.iyul;
+		return this.no+"\t"+this.owner+"\t"+this.balance+"\t"+this.iyul+"\n";
 	}
 	
 	//getter,setter

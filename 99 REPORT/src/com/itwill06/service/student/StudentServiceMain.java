@@ -60,6 +60,8 @@ public class StudentServiceMain {
 		for (int i = 0; i < stdName.length; i++) {
 			stdName[i].print();
 		}
+		System.out.println();
+		
 		
 		/*
 		 * 6. 학생총점으로 오름차순정렬
