@@ -1,6 +1,6 @@
  package com.itwill06.service.student;
 
-
+import javax.swing.text.StyledEditorKit.ForegroundAction;
 
 public class StudentService {
 	private Student[] students={
@@ -116,7 +116,7 @@ public class StudentService {
 		}
 		stdName = new Student[count];
 		int index = 0;
-		for (int i = 0; i < stdName.length; i++) {
+		for (int i = 0; i < students.length; i++) {
 			if(students[i].getName().equals(name)) {
 				stdName[index] = students[i];
 				index++;
@@ -129,14 +129,50 @@ public class StudentService {
 	/*
 	 * 6. 학생총점으로 오름차순정렬
 	 */
-	
-	
+	public void sortByTotAsc() { 
+		for (int i = 0; i < students.length-1; i++) {
+			for (int j = 0; j < students.length-1; j++) {
+				if(students[j].getTot()<students[j+1].getTot()) {
+					Student temp = students[j+1];
+					students[j+1] = students[j];
+					students[j] = temp;
+					
+					
+				}
+			}
+		}
+	}
 	
 	
 	/*
 	  7. 학생학점순으로 오름차순정렬
 	 */
+	public void sortByGradeAsc() {
+		for (int i = 0; i < students.length-1; i++) {
+			for (int j = 0; j > students.length-1; j++) {
+				if(students[j].getGrade() > students[j+1].getGrade()) {
+					Student temp = students[j+1];
+					students[j+1] = students[j];
+					students[j] = temp;
+					
+				}
+			}
+			
+		}
+	}
+	
 	/*
 	 8. 학생이름순으로 오름차순정렬
 	 */
+	public void sortByName() {
+		for (int i = 0; i < students.length-1; i++) {
+			for (int j = 0; j < students.length-1; j++) {
+				if(0<students[j].getName().compareTo(students[j+1].getName())) {
+					Student temp = students[j];
+					students[j] = students[j+1];
+					students[j+1] = temp;
+				}
+			}
+		}
+	}
 }

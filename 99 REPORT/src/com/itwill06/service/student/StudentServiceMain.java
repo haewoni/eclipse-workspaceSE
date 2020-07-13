@@ -55,7 +55,7 @@ public class StudentServiceMain {
 		/*
 		 * 5-1. 이름KIM 인 학생들 반환
 		 */
-		System.out.println("5-1.  이름 KIM 인 학생들 반환");
+		System.out.println("5-1. 이름 KIM 인 학생들 반환");
 		Student[] stdName = studentService.findByName("KIM");
 		for (int i = 0; i < stdName.length; i++) {
 			stdName[i].print();
@@ -66,13 +66,27 @@ public class StudentServiceMain {
 		/*
 		 * 6. 학생총점으로 오름차순정렬
 		 */
-		System.out.println("6. 학생총점으로 오름차순정렬");
-	
+		System.out.println("6. 학생 총점으로 오름차순정렬");
+		studentService.sortByTotAsc();
+		studentService.print();
+		System.out.println();
 	
 		/*
-		 * 7. 학생이름순으로 오름차순정렬
+		 * 7. 학생학점순으로 오름차순정렬
 		 */
-		System.out.println("7. 학생이름으로 오름차순정렬");
+		System.out.println("7. 학생 학점 순으로 오름차순정렬");
+		studentService.sortByGradeAsc();
+		studentService.print();
+		System.out.println();
+		
+		/*
+		 8. 학생이름순으로 오름차순정렬
+		 */
+		System.out.println("8. 학생 이름으로 오름차순정렬");
+		studentService.sortByName();
+		studentService.print();
+	
+		
 
 	}
 
