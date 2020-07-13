@@ -21,7 +21,7 @@ public class AccountService {
 	/*
 	 * 계좌 생성
 	 */
-	public boolean addAccount(Account account) {
+	public boolean addAccount(Account account) throws Exception {
 		boolean isAdd = accountDao.create(account);
 		return isAdd;
 	}
@@ -29,14 +29,14 @@ public class AccountService {
 	/*
 	 * 계좌 전체 검색()
 	 */
-	public ArrayList<Account> findByAll() {
+	public ArrayList<Account> findByAll() throws Exception {
 		ArrayList<Account> accountList = accountDao.readAll();
 		return accountList;
 	}
 	/*
 	 * 계좌번호로 검색(1개 검색) 후 반환
 	 */
-	public Account findAccByNo(int no) {
+	public Account findAccByNo(int no) throws Exception {
 		Account account = accountDao.readOne(no);
 		return account;
 	}
