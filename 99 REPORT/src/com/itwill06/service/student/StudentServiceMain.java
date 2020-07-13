@@ -67,6 +67,8 @@ public class StudentServiceMain {
 		 * 6. 학생총점으로 오름차순정렬
 		 */
 		System.out.println("6. 학생총점으로 오름차순정렬");
+	
+	
 		/*
 		 * 7. 학생이름순으로 오름차순정렬
 		 */

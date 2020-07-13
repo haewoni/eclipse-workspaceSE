@@ -69,6 +69,7 @@ public class AccountDao {
 		if(!this.isDuplicateNo(account.getNo())) {
 			ArrayList<Account> accountList = this.readFile();
 			accountList.add(account);
+			this.writeFile(accountList);
 			return true;
 			
 		}else {
