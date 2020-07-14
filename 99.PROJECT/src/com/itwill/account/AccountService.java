@@ -15,7 +15,7 @@ public class AccountService {
 	private AccountDao accountDao;
 	
 	public AccountService() throws Exception {
-		accountDao = new AccountDao();
+		accountDao = new AccountDaoFileImpl();
 	}
 
 	/*
@@ -40,7 +40,52 @@ public class AccountService {
 		Account account = accountDao.readOne(no);
 		return account;
 	}
+	/*
+	 * 계좌입금
+	 */
+	public void ipGum(int no, int m) throws Exception {
+		/*
+		 * 1. 계좌번호로 계좌객체 찾기  //서비스호출x , Dao(CRUD) 호출 o
+		 * 2. 입금
+		 */
+		Account account = accountDao.readOne(no);
+		account.deposit(m);
+		accountDao.update(account); 		
+	}
 	
+	/*
+	 * 계좌출금
+	 */
+	public void chulGum(int no,int m) throws Exception{
+		/*
+		 * 1.계좌번호로 계좌찾기
+		 * 2. 출금
+		 */
+		Account account = accountDao.readOne(no);
+		account.withdraw(m);
+		accountDao.update(account);
+		
+	}
+	/*
+	 * 계좌해지 
+	 */
+	public Account close(int no) throws Exception{
+		Account closeAccount =null;
+		
+		closeAccount = accountDao.readOne(no);
+		if(closeAccount.getBalance()!=0) {
+			
+		}else {
+			accountDao.delete(no);
+		}
+		return closeAccount;
+	}
+
+	public ArrayList<Account> findAccountByOwner(String ownerStr) throws Exception {
+
+		ArrayList<Account> accountList = accountDao.readByOwner(ownerStr);
+		return accountList;
+	}
 	
 
 	

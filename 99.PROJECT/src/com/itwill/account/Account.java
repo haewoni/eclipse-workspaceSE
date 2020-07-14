@@ -44,15 +44,15 @@ public class Account implements Serializable {
 	public void deposit(int m) {
 		this.balance = this.balance + m;
 	}
-	public void withdraw(int m) throws InsufficientBalanceException{
+	
+	public void withdraw(int m)  {
 		if(this.balance-m < 0) {
-			throw new InsufficientBalanceException(this.owner+" 님 잔고가 부족합니다.");
-			
+		return;
 		}
-		
-		this.balance=this.balance-m;
+		this.balance = this.balance-m;
 		return;
 	}
+	
 	public static void headerPrint() {
 		System.out.println("---------------------------------------");
 		System.out.println("번호\t이름\t잔고\t이율");
