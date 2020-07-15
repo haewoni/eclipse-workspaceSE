@@ -1,5 +1,7 @@
 package com.itwill.member;
 
+import java.util.ArrayList;
+
 public class MemberService {
 		private MemberDao memberDao;
 		public MemberService() throws Exception{
@@ -54,6 +56,10 @@ public class MemberService {
 		/*
 		 * 회원상세보기(회원1명 id로 찾기)
 		 */
+		public Member findById(String id) throws Exception {
+			Member findMember = memberDao.readOne(id);
+			return findMember;
+		}
 		
 		/*
 		 * 회원리스트(전체)
@@ -61,5 +67,21 @@ public class MemberService {
 		 * 회원리스트(주소로 찾기)
 		 * 회원리스트(나이)
 		 */
+		public ArrayList<Member> memberList() throws Exception{
+			return memberDao.readAll();
+		}
+		/*
+		 * 회원탈퇴
+		 */
+		public void memberUnRegister(String id) throws Exception {
+			memberDao.delete(id);
+		}
+		/*
+		 * 회원수정
+		 */
+		public void memberUpdate(Member updateMember) throws Exception {
+			memberDao.update(updateMember);
+			
+		}
 
 }
