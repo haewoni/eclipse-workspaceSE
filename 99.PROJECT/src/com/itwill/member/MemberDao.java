@@ -87,7 +87,7 @@ public class MemberDao {
 	}
 
 	public void update(Member updateMember) {
-
+		System.out.println("update1");
 	}
 
 	public void delete(String id) {
