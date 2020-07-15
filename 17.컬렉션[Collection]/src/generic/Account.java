@@ -61,11 +61,12 @@ public class Account implements Comparable<Account> {
 		
 	}
 	
-	@Override
-	public String toString() {
+	/*public String toString() {
 		return "Account [no=" + no + ", owner=" + owner + ", balance=" + balance + ", iyul=" + iyul + "\n]";
 	}
-	/******getter,setter메쏘드******/
+	*/
+	
+
 	public int getNo() {
 		return no;
 	}
