@@ -40,6 +40,7 @@ import java.awt.event.ComponentEvent;
 public class MemberMainPanel extends JPanel {
 	/*****************************************************/
 	MemberService memberService;
+	boolean isUpdate = false; //초기상태, true는 업뎃
 	/*****************************************************/
 	JTabbedPane memberTapPane;
 	private JTable memberTBL;
@@ -69,6 +70,7 @@ public class MemberMainPanel extends JPanel {
 		logoP.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 	
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\stu03\\Desktop\\w.png"));
 		logoP.add(lblNewLabel, BorderLayout.CENTER);
@@ -260,7 +262,20 @@ public class MemberMainPanel extends JPanel {
 		deleteBtn.setBounds(309, 415, 97, 23);
 		memberListP.add(deleteBtn);
 		
-		updateBtn = new JButton("수정");
+		updateBtn = new JButton("수정");   //2가지 기능, 라벨로도 가능
+		updateBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					updateMember();
+					
+					getMemberList();
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				
+			}
+		});
 		updateBtn.setEnabled(false);
 		updateBtn.setBounds(200, 415, 97, 23);
 		memberListP.add(updateBtn);
@@ -272,6 +287,45 @@ public class MemberMainPanel extends JPanel {
 			e1.printStackTrace();
 		} //생성
 
+	}
+/**************************************************************************/
+	protected void updateMember() {
+		try {
+		if(!isUpdate) {   //edit 상태인지 아닌지
+			// update .edit 풀어주기
+			nameTF.setEditable(true);
+			addressTF.setEditable(true);
+			ageTF.setEditable(true);
+			nameTF.setEditable(true);
+			marriedCHK.setEnabled(true);
+			nameTF.requestFocus();
+			isUpdate = true;
+			updateBtn.setText("수정완료");  //버튼 문구 변경
+		}else {
+			String id = idTF.getText();
+			String name = nameTF.getText();
+			String address = addressTF.getText();
+			String ageStr = ageTF.getText();
+			boolean married = marriedCHK.isSelected();
+		
+			
+			memberService.memberUpdate(new Member(
+					id,id,name,address,Integer.parseInt(ageStr),married));
+			
+			// edit가능 
+			nameTF.setEditable(false);
+			addressTF.setEditable(false);
+			ageTF.setEditable(false);
+			nameTF.setEditable(false);
+			marriedCHK.setEnabled(false);
+			nameTF.requestFocus(); //이것도 다시?
+			isUpdate = false;
+			updateBtn.setText("수정"); 
+		}
+		}catch (Exception e) {
+			e.printStackTrace(); 
+		}
+		
 	}
 
 	protected void deleteMember() {

@@ -41,7 +41,7 @@ public class ArrayListMain {
 		System.out.println(accountList);  // ??????
 		System.out.println();
 		
-		System.out.println("***************2.set*****************");  //3번 자리에 대입, 원래 있던 값은 사라짐?
+		System.out.println("***************2.set*****************");  //3번 자리에 대입, 원래 있던 값은 사라짐
 		accountList.set(3, new Account(4445,"FOUR",44000,0.4));
 		System.out.println("#size:"+accountList.size());
 		System.out.println(accountList.toString());
