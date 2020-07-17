@@ -16,6 +16,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class MemberServiceFrameMain extends JFrame {
 
@@ -48,7 +51,7 @@ public class MemberServiceFrameMain extends JFrame {
 	 */
 	public MemberServiceFrameMain() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 554, 483);
+		setBounds(100, 100, 613, 538);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -73,6 +76,13 @@ public class MemberServiceFrameMain extends JFrame {
 		mnNewMenu.add(logoutMI);
 		
 		gaipMI = new JMenuItem("가입");
+		gaipMI.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JoinDialog joinDialog = new JoinDialog();
+				joinDialog.setVisible(true);
+			}
+			
+		});
 		mnNewMenu.add(gaipMI);
 		
 		JSeparator separator = new JSeparator();
@@ -95,6 +105,7 @@ public class MemberServiceFrameMain extends JFrame {
 		
 		memberMainPanel = new MemberMainPanel();
 		contentPane.add(memberMainPanel, BorderLayout.CENTER);
+		logoutUI();
 		//loginProcess(); ///아무것도 안나오고 다이얼로그만 띄우기
 	}
 
@@ -109,7 +120,8 @@ public class MemberServiceFrameMain extends JFrame {
 		loginDialog.setModal(true);   // 해결하지 않으면 다른 짓 못함
 		loginDialog.setVisible(true);
 		
-		logoutUI();
+	
+		
 		 
 		
 	}
@@ -117,18 +129,23 @@ public class MemberServiceFrameMain extends JFrame {
 	public void loginUI(String id) {
 		this.loginId = id;
 		setTitle(this.loginId+"님 로그인");  //프레임 타이틀에 뜸
-		memberMainPanel.memberTapPane.setEnabledAt(0, true);    //메뉴(탭패인) 활성화
+		memberMainPanel.memberTapPane.setSelectedIndex(1);
+		memberMainPanel.memberTapPane.setEnabledAt(1 , true);    //메뉴(탭패인) 활성화
 		
 		loginMI.setEnabled(false);
 		logoutMI.setEnabled(true);
 		gaipMI.setEnabled(false);
+		
+
 	
 		
 	}
 	protected void logoutUI() {
 		this.loginId = "";
 		setTitle(loginId);
+		memberMainPanel.memberTapPane.setSelectedIndex(0);
 		memberMainPanel.memberTapPane.setEnabledAt(0, false);    //메뉴(탭패인) 활성화
+		memberMainPanel.memberTapPane.setEnabledAt(1, false);    //메뉴(탭패인) 활성화
 		
 		loginMI.setEnabled(true);
 		logoutMI.setEnabled(false);

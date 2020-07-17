@@ -83,5 +83,12 @@ public class MemberService {
 			memberDao.update(updateMember);
 			
 		}
+		/*
+		 * 아이디 중복체크
+		 */
+		public boolean isDuplicateId(String id) throws Exception {
+			return memberDao.isDuplicateID(id);
+			
+		}
 
 }
