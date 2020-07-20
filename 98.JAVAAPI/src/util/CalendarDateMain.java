@@ -9,8 +9,10 @@ public class CalendarDateMain {
 	public static void main(String[] args) throws Exception{
 		long startTime = System.currentTimeMillis();
 		
-		System.out.println("-------Calendar---------");
+		System.out.println("-------Calendar.get---------");
+		
 		Calendar cal1 = Calendar.getInstance();
+		
 		System.out.println(cal1);
 		int year = cal1.get(Calendar.YEAR);
 		int month = cal1.get(Calendar.MONTH);
@@ -19,8 +21,12 @@ public class CalendarDateMain {
 		int minute = cal1.get(Calendar.MINUTE);
 		int sec = cal1.get(Calendar.SECOND);
 		int msec = cal1.get(Calendar.MILLISECOND);
-		System.out.println(year+"/"+(month+1)+"/"+day+" "+hour+":"+minute+":"+sec+"."+msec);
-		Calendar cal2=Calendar.getInstance();
+		
+		System.out.println(year+"/"+(month+1)+"/"+day+" "+hour+":"+minute+":"+sec+"."+msec); //0이 January여서 +1
+		
+		System.out.println("-------Calendar.set---------");
+		Calendar cal2 = Calendar.getInstance();  //new Calendar 불가
+		
 		cal2.set(Calendar.YEAR,2019);
 		cal2.set(Calendar.MONTH, 11);
 		cal2.set(Calendar.DAY_OF_MONTH,31);
@@ -35,28 +41,39 @@ public class CalendarDateMain {
 		minute = cal2.get(Calendar.MINUTE);
 		sec = cal2.get(Calendar.SECOND);
 		msec = cal2.get(Calendar.MILLISECOND);
-		System.out.println(year+"/"+(month+1)+"/"+day+" "+hour+":"+minute+":"+sec+"."+msec);
+		
+		System.out.println(">>>>1."+year+"/"+(month+1)+"/"+day+" "+hour+":"+minute+":"+sec+"."+msec);
 		
 		Calendar cal3=Calendar.getInstance();
 		cal3.set(2012, 5, 12, 11, 59, 58);
-		System.out.println(cal3);
+		System.out.println(">>>>2."+cal3);
 		
 		Calendar cal4=Calendar.getInstance();
-		cal4.setTimeInMillis(System.currentTimeMillis());
-		System.out.println(cal4);
 		
-		System.out.println("-------------SimpleDateFormat-----------------");
+		cal4.setTimeInMillis(System.currentTimeMillis());
+		
+		System.out.println(">>>>3."+cal4);
+		//System.out.println(System.currentTimeMillis());  //long type
+		
+		System.out.println("-------------SimpleDateFormat(Calendar--->Date--->text)-----------------");
+		System.out.println(new Date());
+		
 		SimpleDateFormat sdf1=
-				new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  //포매터
+		
+		
+		System.out.println(sdf1.format(new Date()));  //util Date 객체 사용
+		System.out.println(sdf1.format(new Date(System.currentTimeMillis())));
+		System.out.println(sdf1.format(new Date(cal3.getTimeInMillis())));
 		
 		SimpleDateFormat sdf2=
 				new SimpleDateFormat("yyyy/MM/dd");
-		System.out.println(sdf1.format(new Date()));
-		System.out.println(sdf1.format(new Date(System.currentTimeMillis())));
-		System.out.println(sdf1.format(new Date(cal3.getTimeInMillis())));
+		
 		System.out.println(sdf2.format(new Date()));
 		System.out.println(sdf2.format(new Date(System.currentTimeMillis())));
 		System.out.println(sdf2.format(new Date(cal3.getTimeInMillis())));
+		System.out.println();
+		
 		System.out.println("---------java.util.Date(java.sql.Date)-----");
 		Date date1=new Date();
 		System.out.println(date1);
@@ -93,6 +110,7 @@ public class CalendarDateMain {
 		System.out.println("mm-->"+sdf4.format(date5));
 		sdf4.applyPattern("ss");
 		System.out.println("ss-->"+sdf4.format(date5));
+		System.out.println();
 		
 		System.out.println("-----------------compare--------------");
 		Calendar c1=Calendar.getInstance();
@@ -111,9 +129,12 @@ public class CalendarDateMain {
 		System.out.println("c1 , c3 -->"+result);
 		boolean isSame = c1.equals(c2);
 		System.out.println(isSame);
+		System.out.println();
 		System.out.println("-------------------------------------");
+		
 		Calendar c4=Calendar.getInstance();
 		c4.clear();
+		
 		c4.set(2020,0,9,11,13,20);
 		SimpleDateFormat sdf5=
 				new SimpleDateFormat("yyyy MM dd HH:mm:ss");
@@ -121,11 +142,11 @@ public class CalendarDateMain {
 		//c4.add(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
 		//System.out.println(sdf5.format(new Date(c4.getTimeInMillis())));
 		
-		c4.add(Calendar.DATE, 5);
+		c4.add(Calendar.DATE, 5);  //5일 후
 		System.out.println(sdf5.format(new Date(c4.getTimeInMillis())));
-		c4.add(Calendar.DATE, -5);
+		c4.add(Calendar.DATE, -5); //5일 전
 		System.out.println(sdf5.format(new Date(c4.getTimeInMillis())));
-		c4.add(Calendar.YEAR, 1);
+		c4.add(Calendar.YEAR, 1); // 1년 후
 		System.out.println(sdf5.format(new Date(c4.getTimeInMillis())));
 		c4.add(Calendar.MONTH, 6);
 		System.out.println(sdf5.format(new Date(c4.getTimeInMillis())));
