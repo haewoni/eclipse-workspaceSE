@@ -59,29 +59,32 @@ public class ArraysMain {
 		
 		System.out.println();
 		
-		int[] intArray2Copy = new int[intArray2.length];
-		System.arraycopy(intArray2, 0, intArray2Copy, 0, intArray2.length);   //??????????
+		int[] intArray2Copy = new int[intArray2.length];    
+		System.arraycopy(intArray2, 0, intArray2Copy, 0, intArray2.length);  
 		for (int i : intArray2Copy) {
 			System.out.println(i+" ");
 		}
-		System.out.println("--------------sort[기본형]------------------");
+		
+		System.out.println("--------------sort[기본형]------------------"); 
 		//String
 		int[] scoreArray = {90,34,23,88,56,11};
-		Arrays.sort(scoreArray);
-		for (int score : scoreArray) {
-			System.out.println(score+" ");
+		Arrays.sort(scoreArray);   
+		for (int score : scoreArray) {      //for(int score : scoreArray) { System.out.println(score+" ")
+			System.out.print(score+" ");
 		}
+		System.out.println();
+		
 		String[] nameArray = {"KIM","AIM","FIM","BIM","QIM"};    //compareTo 이용해서 sorting 사전순
 		Arrays.sort(nameArray);
 		for (String name : nameArray) {
-			System.out.println(name+" ");
+			System.out.print(name+" ");
 		}  
+		System.out.println();
 		System.out.println();
 		//Wrapper
 		System.out.println("-----------------sort[참조형]--------------");
 		Integer[] wia = {
-			new Integer(90),67,12,56,89,23,99	
-			
+			new Integer(90),67,12,56,89,23,99
 		};
 		Arrays.sort(wia);
 		for (Integer wi : wia) {
