@@ -55,7 +55,8 @@ public class ArraysMain {
 		Account[] copyAccounts = Arrays.copyOf(accounts, 9);   ///배열 복사, 배열보다 많이 복사하면 Account객체는 null 뜸
 		for (Account account : copyAccounts) {
 			account.print();
-		}
+		} 
+		
 		System.out.println();
 		
 		int[] intArray2Copy = new int[intArray2.length];
