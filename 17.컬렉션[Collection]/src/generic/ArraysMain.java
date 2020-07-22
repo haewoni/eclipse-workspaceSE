@@ -67,7 +67,7 @@ public class ArraysMain {
 		
 		System.out.println("--------------sort[기본형]------------------"); 
 		//String
-		int[] scoreArray = {90,34,23,88,56,11};
+		int[] scoreArray = {90,34,23,88,56,11}; 
 		Arrays.sort(scoreArray);   
 		for (int score : scoreArray) {      //for(int score : scoreArray) { System.out.println(score+" ")
 			System.out.print(score+" ");
@@ -75,7 +75,7 @@ public class ArraysMain {
 		System.out.println();
 		
 		String[] nameArray = {"KIM","AIM","FIM","BIM","QIM"};    //compareTo 이용해서 sorting 사전순
-		Arrays.sort(nameArray);
+		Arrays.sort(nameArray);     
 		for (String name : nameArray) {
 			System.out.print(name+" ");
 		}  
@@ -83,14 +83,12 @@ public class ArraysMain {
 		System.out.println();
 		//Wrapper
 		System.out.println("-----------------sort[참조형]--------------");
-		Integer[] wia = {
-			new Integer(90),67,12,56,89,23,99
-		};
-		Arrays.sort(wia);
+		Integer[] wia = {new Integer(90),(67),12,56,89,23,99};
+		Arrays.sort(wia);   
 		for (Integer wi : wia) {
 			System.out.println(wi.intValue()+" ");
 		}
-		System.out.println("-------------ComparableAsc--------------------");
+		System.out.println("-------------ComparableAsc--------------------");    ///여기서부터 복습
 		System.out.println();
 		
 		Arrays.sort(accounts);
